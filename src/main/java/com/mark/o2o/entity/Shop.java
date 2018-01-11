@@ -29,12 +29,12 @@ public class Shop {
 	private Integer enableStatus;
 	// 超级管理员给店家的提醒，包括为什么审核不通过等
 	private String advice;
-	// 店铺所属区域
-	private Area area;
-	// 店铺是属于哪个店家的
-	private PersonInfo owner;
-	// 店铺类别
-	private ShopCategory shopCategory;
+	
+	
+	private Area area;// 店铺所属区域
+	private PersonInfo owner;// 店铺是属于哪个店家的
+	private ShopCategory shopCategory;// 店铺类别
+	
 	
 	public Long getShopId() {
 		return shopId;
