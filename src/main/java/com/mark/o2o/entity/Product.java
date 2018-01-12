@@ -31,6 +31,7 @@ public class Product {
 		private ProductCategory productCategory;
 		// 店铺实体类，标明商品属于哪个店铺
 		private Shop shop;
+		
 		public Long getProductId() {
 			return productId;
 		}

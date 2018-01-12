@@ -13,6 +13,7 @@ public class ProductCategory {
 		private Integer priority;
 		// 创建时间
 		private Date createTime;
+		
 		public Long getProductCategoryId() {
 			return productCategoryId;
 		}

@@ -1,7 +1,13 @@
 package com.mark.o2o.entity;
 
 import java.util.Date;
-
+/**
+ * 
+ * 本地验证实体类，主要用来做帐号密码的登录
+ * 
+ * @author msi
+ *
+ */
 public class LocalAuth {
 	private Long localAuthId;
 	private String userName;

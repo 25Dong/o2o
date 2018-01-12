@@ -11,6 +11,7 @@ public class ProductImg {
 		private String imgDesc;
 		// 权重，越大越排前显示
 		private Integer priority;
+		
 		public Long getProductImgId() {
 			return productImgId;
 		}

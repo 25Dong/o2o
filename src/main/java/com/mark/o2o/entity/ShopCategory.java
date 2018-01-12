@@ -15,6 +15,7 @@ public class ShopCategory {
 		private Integer priority;
 		// 创建时间
 		private Date createTime;
+		
 		public Long getShopCategoryId() {
 			return shopCategoryId;
 		}
