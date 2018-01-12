@@ -1,0 +1,2 @@
+2018-01-11 13:58:52.701 [main] ERROR com.mark.o2o.util.ImageUtil - javax.imageio.IIOException: Can't read input file!
+2018-01-11 14:06:36.923 [main] ERROR com.mark.o2o.util.ImageUtil - javax.imageio.IIOException: Can't read input file!

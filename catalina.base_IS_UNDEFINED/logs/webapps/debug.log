@@ -1,6 +1,3 @@
-2018-01-10 23:16:37.534 [main] DEBUG com.mark.o2o.dao.AreaDao.query - ==>  Preparing: SELECT area_id, area_name, priority, create_time, last_edit_time FROM tb_area ORDER BY priority DESC 
-2018-01-10 23:16:37.566 [main] DEBUG com.mark.o2o.dao.AreaDao.query - ==> Parameters: 
-2018-01-10 23:16:37.623 [main] DEBUG com.mark.o2o.dao.AreaDao.query - <==      Total: 4
-2018-01-10 23:22:30.127 [main] DEBUG com.mark.o2o.dao.AreaDao.query - ==>  Preparing: SELECT area_id, area_name, priority, create_time, last_edit_time FROM tb_area ORDER BY priority DESC 
-2018-01-10 23:22:30.169 [main] DEBUG com.mark.o2o.dao.AreaDao.query - ==> Parameters: 
-2018-01-10 23:22:30.212 [main] DEBUG com.mark.o2o.dao.AreaDao.query - <==      Total: 4
+2018-01-12 13:01:30.948 [main] DEBUG com.mark.o2o.dao.AreaDao.query - ==>  Preparing: SELECT area_id, area_name, priority, create_time, last_edit_time FROM tb_area ORDER BY priority DESC 
+2018-01-12 13:01:31.019 [main] DEBUG com.mark.o2o.dao.AreaDao.query - ==> Parameters: 
+2018-01-12 13:01:31.096 [main] DEBUG com.mark.o2o.dao.AreaDao.query - <==      Total: 4

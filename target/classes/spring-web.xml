@@ -32,6 +32,6 @@
 	</bean>
 
 	<!-- 4.扫描web相关的bean -->
-	<context:component-scan base-package="com.mark.o2o.web.superadmin" />
+	<context:component-scan base-package="com.mark.o2o.web" />
 	
 </beans>
