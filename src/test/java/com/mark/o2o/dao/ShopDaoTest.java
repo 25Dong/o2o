@@ -46,6 +46,7 @@ public class ShopDaoTest extends BaseTest{
 	
 	//测试更新店铺
 	@Test
+	@Ignore
 	public void testUpdateShop() {
 		Shop shop = new Shop();
 		shop.setShopId(40L);
@@ -54,5 +55,13 @@ public class ShopDaoTest extends BaseTest{
 		shop.setLastEditTime(new Date());
 		int effectedNum = shopDao.updateShop(shop);
 		assertEquals(1, effectedNum);
+	}
+	
+	//根据shop id查询店铺
+	@Test
+	public void testQueryByShopId(){
+		Shop shop = shopDao.queryByShopId(40L);
+		System.out.println(shop.getArea().getAreaName());
+		System.out.println(shop.getShopCategory().getShopCategoryName());
 	}
 }

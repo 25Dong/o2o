@@ -12,7 +12,6 @@ public class ShopAdminController {
 	public String shopOperation(){
 		// 转发至店铺注册/编辑页面
 		//返回的字符串和是html页面在web-inf下的shop文件夹shopoperation.html String-web.xml的第三点配置
-		System.out.println("2222");
 		return "shop/shopoperation";
 	}
 }

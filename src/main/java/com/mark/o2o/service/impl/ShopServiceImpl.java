@@ -28,17 +28,43 @@ public class ShopServiceImpl implements ShopService {
 		return null;
 	}
 
+	//根据shopId查找店铺
 	public Shop getByShopId(long shopId) {
-		// TODO Auto-generated method stub
-		return null;
+		return shopDao.queryByShopId(shopId);
 	}
 
+	//更新店铺信息
 	public ShopExecution modifyShop(Shop shop, ImageHolder thumbnail)
 			throws ShopOperationException {
-		// TODO Auto-generated method stub
-		return null;
+		if(shop == null || shop.getShopId() == null){
+			return new ShopExecution(ShopStateEnum.NULL_SHOP);
+		}else{
+			//判断是否更新图片
+			try{
+				if(thumbnail.getImage()!= null&&thumbnail.getImageName()!=null&&!(thumbnail.getImageName()).equals("")){
+					Shop tempshop = shopDao.queryByShopId(shop.getShopId());
+					//如果原来有保存图片路径
+					if(tempshop.getShopImg()!=null){
+						ImageUtil.deleteFileOrPath(tempshop.getShopImg());
+					}
+					addShopImg(shop, thumbnail);
+				}
+				//更新店铺信息
+				shop.setLastEditTime(new Date());//更新最后一次编辑的时间
+				int effectedNum = shopDao.updateShop(shop);
+				if(effectedNum <= 0){
+					return new ShopExecution(ShopStateEnum.INNER_ERROR);
+				}else{
+					shop = shopDao.queryByShopId(shop.getShopId());
+					return new ShopExecution(ShopStateEnum.SUCCESS,shop);
+				}
+			}catch(Exception e){
+				throw new ShopOperationException("modifyShop error:"+e.getMessage());
+			}
+		}
 	}
 	
+	//增加店铺
 	@Transactional
 	public ShopExecution addShop(Shop shop, ImageHolder thumbnail)
 			throws ShopOperationException {
