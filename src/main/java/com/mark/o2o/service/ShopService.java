@@ -24,6 +24,7 @@ public interface ShopService {
 	 */
 	Shop getByShopId(long shopId);
 
+	
 	/**
 	 * 更新店铺信息，包括对图片的处理
 	 * 
@@ -35,7 +36,7 @@ public interface ShopService {
 	ShopExecution modifyShop(Shop shop, ImageHolder thumbnail) throws ShopOperationException;
 
 	/**
-	 * 注册店铺信息，包括图片处理
+	 *1. 注册店铺信息，包括图片处理
 	 * 
 	 * @param shop
 	 * @param shopImgInputStream

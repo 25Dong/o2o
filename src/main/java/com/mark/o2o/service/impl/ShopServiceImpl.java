@@ -41,7 +41,7 @@ public class ShopServiceImpl implements ShopService {
 		}else{
 			//判断是否更新图片
 			try{
-				if(thumbnail.getImage()!= null&&thumbnail.getImageName()!=null&&!(thumbnail.getImageName()).equals("")){
+				if(thumbnail!= null&&thumbnail.getImage()!= null&&thumbnail.getImageName()!=null&&!(thumbnail.getImageName()).equals("")){
 					Shop tempshop = shopDao.queryByShopId(shop.getShopId());
 					//如果原来有保存图片路径
 					if(tempshop.getShopImg()!=null){
