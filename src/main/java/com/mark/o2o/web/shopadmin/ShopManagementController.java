@@ -42,7 +42,7 @@ public class ShopManagementController {
 	@Autowired
 	private AreaService areaService;
 	
-	//打开商店时自动加载商店种类和区域的信息
+	//1.打开商店时自动加载商店种类和区域的信息
 	@RequestMapping(value = "/getshopinitinfo",method = RequestMethod.GET)
 	@ResponseBody
 	private Map<String,Object> getShopInitInfo(){
@@ -62,7 +62,7 @@ public class ShopManagementController {
 		return modelMap;                                                                 
 	}
 	
-	//添加,更新商店
+	//2.添加,更新商店
 	@RequestMapping(value = "/registershop", method = RequestMethod.POST)
 	@ResponseBody
 	private Map<String, Object> registerShop(HttpServletRequest request) {
@@ -134,7 +134,7 @@ public class ShopManagementController {
 		}
 	}
 
-	//根据shopId查找商店
+	//3.根据shopId查找商店
 	@RequestMapping(value = "/getshopbyid" ,method=RequestMethod.GET)
 	@ResponseBody
 	private Map<String,Object> getShopById(HttpServletRequest request){
@@ -158,6 +158,7 @@ public class ShopManagementController {
 		return modelMap;
 	}
 
+	//4.
 	@RequestMapping(value = "/modifyshop", method = RequestMethod.POST)
 	@ResponseBody
 	private Map<String, Object> modifyShop(HttpServletRequest request) {
@@ -214,5 +215,56 @@ public class ShopManagementController {
 			modelMap.put("errMsg", "请输入店铺Id");
 			return modelMap;
 		}
+	}
+
+	//5.根据店主的信息返回该店主的所有店铺信息
+	@RequestMapping(value = "/getshoplist", method = RequestMethod.GET)
+	@ResponseBody
+	private Map<String,Object> getShopList(HttpServletRequest request){
+		Map<String,Object> modelMap = new HashMap<String, Object>();
+		//TODO
+		PersonInfo user = new PersonInfo();
+		user.setUserId(9L);
+		user.setName("这是后台设置的用户名");
+		request.getSession().setAttribute("user", user);
+		
+		user = (PersonInfo) request.getSession().getAttribute("user");
+		try{
+			Shop shopCondition = new Shop();
+			shopCondition.setOwner(user);
+			ShopExecution se = shopService.getShopList(shopCondition, 0, 100);//从第一页，（0-100）条数据
+			modelMap.put("shopList",se.getShopList());
+			modelMap.put("user", user);
+			modelMap.put("success", true);
+		}catch(Exception e){
+			modelMap.put("sucess", false);
+			modelMap.put("errMsg", e.getMessage());
+		}
+		return modelMap;
+	}
+	
+	//6.
+	@RequestMapping(value = "/getshopmanagementinfo", method = RequestMethod.GET)
+	@ResponseBody
+	private Map<String, Object> getShopManagementInfo(HttpServletRequest request) {
+		Map<String, Object> modelMap = new HashMap<String, Object>();
+		long shopId = HttpServletRequestUtil.getLong(request, "shopId");
+		if (shopId <= 0) {
+			Object currentShopObj = request.getSession().getAttribute("currentShop");
+			if (currentShopObj == null) {
+				modelMap.put("redirect", true);
+				modelMap.put("url", "/o2o/shopadmin/shoplist");
+			} else {
+				Shop currentShop = (Shop) currentShopObj;
+				modelMap.put("redirect", false);
+				modelMap.put("shopId", currentShop.getShopId());
+			}
+		} else {
+			Shop currentShop = new Shop();
+			currentShop.setShopId(shopId);
+			request.getSession().setAttribute("currentShop", currentShop);
+			modelMap.put("redirect", false);
+		}
+		return modelMap;
 	}
 }

@@ -1,6 +1,7 @@
 package com.mark.o2o.service.impl;
 
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,6 +15,7 @@ import com.mark.o2o.enums.ShopStateEnum;
 import com.mark.o2o.exceptions.ShopOperationException;
 import com.mark.o2o.service.ShopService;
 import com.mark.o2o.util.ImageUtil;
+import com.mark.o2o.util.PageCalculator;
 import com.mark.o2o.util.PathUtil;
 
 @Service
@@ -22,10 +24,23 @@ public class ShopServiceImpl implements ShopService {
 	@Autowired
 	private ShopDao shopDao;
 	
+	//根据shopCondition分页返回相应店铺列表
 	public ShopExecution getShopList(Shop shopCondition, int pageIndex,
 			int pageSize) {
-		// TODO Auto-generated method stub
-		return null;
+		//将页码数装换为行数
+		int rowIndex = PageCalculator.calculateRowIndex(pageIndex, pageSize);
+		//根据查询条件，调用dao层返回相关的店铺列表
+		List<Shop> shopList = shopDao.queryShopList(shopCondition, rowIndex, pageSize);
+		//根据相同的查询条件，返回店铺总数
+		int count = shopDao.queryShopCount(shopCondition);
+		ShopExecution se = new ShopExecution();
+		if(shopList != null){
+			se.setShopList(shopList);
+			se.setCount(count);
+		}else{
+			se.setState(ShopStateEnum.INNER_ERROR.getState());
+		}
+		return se;
 	}
 
 	//根据shopId查找店铺

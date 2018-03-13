@@ -17,7 +17,7 @@ import com.mark.o2o.entity.Area;
 import com.mark.o2o.service.AreaService;
 
 @Controller
-@RequestMapping("/superadmin")
+@RequestMapping("/superadmin")//指定路由
 public class AreaController {
 	Logger logger = LoggerFactory.getLogger(AreaController.class);
 	@Autowired
@@ -32,14 +32,14 @@ public class AreaController {
 		List<Area> list = new ArrayList<Area>();
 		try {
 			list = areaService.getAreaList();
-			modelMap.put("rows", list);
+			modelMap.put("rows", list);//key赋值为rows和total 是为了贴近前端框架
 			modelMap.put("total", list.size());
 		} catch (Exception e) {
+			logger.error("test error!");
 			e.printStackTrace();
 			modelMap.put("success", false);
 			modelMap.put("errMsg", e.toString());
 		}
-		logger.error("test error!");
 		long endTime = System.currentTimeMillis();
 		logger.debug("costTime:[{}ms]", endTime - startTime);
 		logger.info("===end===");

@@ -6,6 +6,7 @@ public enum ShopStateEnum {
 	private int state;
 	private String stateInfo;
 
+	//注意：枚举中的构造函数需要声明private
 	private ShopStateEnum(int state, String stateInfo) {
 		this.state = state;
 		this.stateInfo = stateInfo;

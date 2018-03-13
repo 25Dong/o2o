@@ -14,5 +14,6 @@ public class AreaServiceTest extends BaseTest{
 	@Test
 	public void testGetAreaList(){
 		List<Area> arealist = areService.getAreaList();
+		System.out.println(arealist);
 	}
 }

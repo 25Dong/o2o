@@ -13,10 +13,11 @@ import com.mark.o2o.service.AreaService;
 @Service
 public class AreaServiceImpl implements AreaService{
 
-	//Sping 自动注入
+	//Spring 自动注入
 	@Autowired
 	private AreaDao areaDao;
 
+	//Service层调用Dao层
 	public List<Area> getAreaList() {
 		return areaDao.query();
 	}
