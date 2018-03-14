@@ -1,3 +1,28 @@
 2018-03-14 12:02:44.358 [main] DEBUG c.m.o.dao.ProductCategoryDao.deleteProductCategory - ==>  Preparing: DELETE FROM tb_product_category WHERE product_category_id=? AND shop_id=? 
 2018-03-14 12:02:44.386 [main] DEBUG c.m.o.dao.ProductCategoryDao.deleteProductCategory - ==> Parameters: 12(Long), 50(Long)
 2018-03-14 12:02:44.887 [main] DEBUG c.m.o.dao.ProductCategoryDao.deleteProductCategory - <==    Updates: 1
+2018-03-14 18:38:16.896 [main] DEBUG com.mark.o2o.dao.ProductDao.insertProduct - ==>  Preparing: INSERT INTO tb_product( product_name, product_desc,img_addr, normal_price,promotion_price,priority, create_time, last_edit_time,enable_status, product_category_id,shop_id) VALUES (?,?,?, ?,?,?, ?,?,?, ?,?) 
+2018-03-14 18:38:16.930 [main] DEBUG com.mark.o2o.dao.ProductDao.insertProduct - ==> Parameters: 测试1(String), 测试desc1(String), test1(String), 1(String), 2(String), 1(Integer), 2018-03-14 18:38:16.421(Timestamp), 2018-03-14 18:38:16.421(Timestamp), 1(Integer), 1(Long), 1(Long)
+2018-03-14 18:38:17.079 [main] DEBUG com.mark.o2o.dao.ProductDao.insertProduct - <==    Updates: 1
+2018-03-14 18:38:17.089 [main] DEBUG com.mark.o2o.dao.ProductDao.insertProduct - ==>  Preparing: INSERT INTO tb_product( product_name, product_desc,img_addr, normal_price,promotion_price,priority, create_time, last_edit_time,enable_status, product_category_id,shop_id) VALUES (?,?,?, ?,?,?, ?,?,?, ?,?) 
+2018-03-14 18:38:17.091 [main] DEBUG com.mark.o2o.dao.ProductDao.insertProduct - ==> Parameters: 测试2(String), 测试Desc2(String), test2(String), null, null, 2(Integer), 2018-03-14 18:38:16.421(Timestamp), 2018-03-14 18:38:16.421(Timestamp), 0(Integer), 1(Long), 1(Long)
+2018-03-14 18:38:17.170 [main] DEBUG com.mark.o2o.dao.ProductDao.insertProduct - <==    Updates: 1
+2018-03-14 18:38:17.170 [main] DEBUG com.mark.o2o.dao.ProductDao.insertProduct - ==>  Preparing: INSERT INTO tb_product( product_name, product_desc,img_addr, normal_price,promotion_price,priority, create_time, last_edit_time,enable_status, product_category_id,shop_id) VALUES (?,?,?, ?,?,?, ?,?,?, ?,?) 
+2018-03-14 18:38:17.171 [main] DEBUG com.mark.o2o.dao.ProductDao.insertProduct - ==> Parameters: test3(String), 测试Desc3(String), test3(String), null, null, 3(Integer), 2018-03-14 18:38:16.421(Timestamp), 2018-03-14 18:38:16.421(Timestamp), 1(Integer), 1(Long), 1(Long)
+2018-03-14 18:38:17.236 [main] DEBUG com.mark.o2o.dao.ProductDao.insertProduct - <==    Updates: 1
+2018-03-14 19:00:59.322 [main] DEBUG c.mark.o2o.dao.ProductImgDao.batchInsertProductImg - ==>  Preparing: INSERT INTO tb_product_img(img_addr,img_desc,priority,create_time,product_id) VALUES ( ?, ?, ?, ?, ? ) , ( ?, ?, ?, ?, ? ) 
+2018-03-14 19:00:59.355 [main] DEBUG c.mark.o2o.dao.ProductImgDao.batchInsertProductImg - ==> Parameters: 测试图片1的地址(String), 测试图片1的描述(String), 1(Integer), 2018-03-14 19:00:58.89(Timestamp), 1(Long), 测试图片2的地址(String), 测试图片2的描述(String), 2(Integer), 2018-03-14 19:00:58.89(Timestamp), 1(Long)
+2018-03-14 19:00:59.466 [main] DEBUG c.mark.o2o.dao.ProductImgDao.batchInsertProductImg - <==    Updates: 2
+2018-03-14 21:50:11.102 [main] DEBUG com.mark.o2o.util.ImageUtil - current relativeAddr is :\upload\images\item\shop\1\2018031421501178847.jpg
+2018-03-14 21:50:11.105 [main] DEBUG com.mark.o2o.util.ImageUtil - current complete addr is :D:\projectdev\image\upload\images\item\shop\1\2018031421501178847.jpg
+2018-03-14 21:50:11.105 [main] DEBUG com.mark.o2o.util.ImageUtil - basePath is :/E:/workspace_MARK/o2o/target/test-classes/
+2018-03-14 21:50:11.710 [main] DEBUG com.mark.o2o.dao.ProductDao.insertProduct - ==>  Preparing: INSERT INTO tb_product( product_name, product_desc,img_addr, normal_price,promotion_price,priority, create_time, last_edit_time,enable_status, product_category_id,shop_id) VALUES (?,?,?, ?,?,?, ?,?,?, ?,?) 
+2018-03-14 21:50:11.743 [main] DEBUG com.mark.o2o.dao.ProductDao.insertProduct - ==> Parameters: 测试商品1(String), 测试商品1(String), \upload\images\item\shop\1\2018031421501178847.jpg(String), null, null, 20(Integer), 2018-03-14 21:50:11.07(Timestamp), 2018-03-14 21:50:11.07(Timestamp), 1(Integer), 1(Long), 1(Long)
+2018-03-14 21:50:11.774 [main] DEBUG com.mark.o2o.dao.ProductDao.insertProduct - <==    Updates: 1
+2018-03-14 21:50:11.780 [main] DEBUG com.mark.o2o.util.ImageUtil - current relativeAddr is :\upload\images\item\shop\1\2018031421501170903.jpg
+2018-03-14 21:50:11.780 [main] DEBUG com.mark.o2o.util.ImageUtil - current complete addr is :D:\projectdev\image\upload\images\item\shop\1\2018031421501170903.jpg
+2018-03-14 21:50:11.803 [main] DEBUG com.mark.o2o.util.ImageUtil - current relativeAddr is :\upload\images\item\shop\1\2018031421501157821.jpg
+2018-03-14 21:50:11.803 [main] DEBUG com.mark.o2o.util.ImageUtil - current complete addr is :D:\projectdev\image\upload\images\item\shop\1\2018031421501157821.jpg
+2018-03-14 21:50:11.849 [main] DEBUG c.mark.o2o.dao.ProductImgDao.batchInsertProductImg - ==>  Preparing: INSERT INTO tb_product_img(img_addr,img_desc,priority,create_time,product_id) VALUES ( ?, ?, ?, ?, ? ) , ( ?, ?, ?, ?, ? ) 
+2018-03-14 21:50:11.851 [main] DEBUG c.mark.o2o.dao.ProductImgDao.batchInsertProductImg - ==> Parameters: \upload\images\item\shop\1\2018031421501170903.jpg(String), null, null, 2018-03-14 21:50:11.803(Timestamp), 4(Long), \upload\images\item\shop\1\2018031421501157821.jpg(String), null, null, 2018-03-14 21:50:11.826(Timestamp), 4(Long)
+2018-03-14 21:50:11.877 [main] DEBUG c.mark.o2o.dao.ProductImgDao.batchInsertProductImg - <==    Updates: 2
