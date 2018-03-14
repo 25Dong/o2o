@@ -262,7 +262,7 @@ public class ShopManagementController {
 		} else {
 			Shop currentShop = new Shop();
 			currentShop.setShopId(shopId);
-			request.getSession().setAttribute("currentShop", currentShop);
+			request.getSession().setAttribute("currentShop", currentShop);//把当前的店铺存放到session中
 			modelMap.put("redirect", false);
 		}
 		return modelMap;
