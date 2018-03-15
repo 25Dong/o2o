@@ -67,14 +67,16 @@ public class ShopManagementController {
 	@ResponseBody
 	private Map<String, Object> registerShop(HttpServletRequest request) {
 		Map<String, Object> modelMap = new HashMap<String, Object>();
-		if (!CodeUtil.checkVerifyCode(request)) {
+		if (!CodeUtil.checkVerifyCode(request)) {//验证码的验证
 			modelMap.put("success", false);
 			modelMap.put("errMsg", "输入了错误的验证码");
 			return modelMap;
 		}
+		
 		// 1.接收并转化相应的参数，包括店铺信息以及图片信息
+		//注意这里的"shopStr"由前端文件shopoperation.js传递过来 在110行
 		String shopStr = HttpServletRequestUtil.getString(request, "shopStr");
-		ObjectMapper mapper = new ObjectMapper();
+		ObjectMapper mapper = new ObjectMapper();//JSON和实体类的相互转换
 		Shop shop = null;
 		try {
 			shop = mapper.readValue(shopStr, Shop.class);
@@ -86,7 +88,7 @@ public class ShopManagementController {
 		CommonsMultipartFile shopImg = null;
 		CommonsMultipartResolver commonsMultipartResolver = new CommonsMultipartResolver(
 				request.getSession().getServletContext());
-		if (commonsMultipartResolver.isMultipart(request)) {
+		if (commonsMultipartResolver.isMultipart(request)) {//判断是否有文件流
 			MultipartHttpServletRequest multipartHttpServletRequest = (MultipartHttpServletRequest) request;
 			shopImg = (CommonsMultipartFile) multipartHttpServletRequest.getFile("shopImg");
 		} else {

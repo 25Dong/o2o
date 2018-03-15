@@ -34,4 +34,17 @@ public class ShopAdminController {
 	public String productCategoryManage(){
 		return "shop/productcategorymanagement";
 	}
+	
+	//5.装发至商品编辑/添加页面
+	@RequestMapping(value = "/productoperation",method=RequestMethod.GET)
+	public String productOperation(){
+		return "shop/productoperation";
+	}
+	
+	//6.// 转发至商品管理页面
+	@RequestMapping(value = "/productmanagement",method=RequestMethod.GET)
+	public String productManagement(){
+		return "shop/productmanagement";
+		
+	}
 }

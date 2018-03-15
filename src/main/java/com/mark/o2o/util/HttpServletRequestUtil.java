@@ -1,8 +1,13 @@
 package com.mark.o2o.util;
 
 import javax.servlet.http.HttpServletRequest;
-
+/**
+ * 接收并转化相应的参数
+ * @author msi
+ *
+ */
 public class HttpServletRequestUtil {
+	
 	public static int getInt(HttpServletRequest request, String key) {
 		try {
 			return Integer.decode(request.getParameter(key));
@@ -11,6 +16,7 @@ public class HttpServletRequestUtil {
 		}
 	}
 
+	
 	public static long getLong(HttpServletRequest request, String key) {
 		try {
 			return Long.valueOf(request.getParameter(key));

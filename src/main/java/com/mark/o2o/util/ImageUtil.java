@@ -16,7 +16,7 @@ import com.mark.o2o.dto.ImageHolder;
 import net.coobird.thumbnailator.Thumbnails;
 import net.coobird.thumbnailator.geometry.Positions;
 public class ImageUtil {
-	private static String basePath = Thread.currentThread().getContextClassLoader().getResource("").getPath();
+	private static String basePath = Thread.currentThread().getContextClassLoader().getResource("").getPath();//获取当前线程的绝对值路径
 	private static final SimpleDateFormat sDateFormat = new SimpleDateFormat("yyyyMMddHHmmss");
 	private static final Random r = new Random();
 	private static Logger logger = LoggerFactory.getLogger(ImageUtil.class);
@@ -104,7 +104,7 @@ public class ImageUtil {
 			logger.error(e.toString());
 			throw new RuntimeException("创建缩图片失败：" + e.toString());
 		}
-		// 返回图片相对路径地址
+		// 返回图片相对路径地址（存放在数据库中用）
 		return relativeAddr;
 	}
 
@@ -115,9 +115,9 @@ public class ImageUtil {
 	 * @param targetAddr
 	 */
 	private static void makeDirPath(String targetAddr) {
-		String realFileParentPath = PathUtil.getImgBasePath() + targetAddr;
+		String realFileParentPath = PathUtil.getImgBasePath() + targetAddr;//绝对路径
 		File dirPath = new File(realFileParentPath);
-		if (!dirPath.exists()) {
+		if (!dirPath.exists()) {//如果不存在
 			dirPath.mkdirs();
 		}
 	}
@@ -138,8 +138,8 @@ public class ImageUtil {
 	 * @return
 	 */
 	public static String getRandomFileName() {
-		// 获取随机的五位数
-		int rannum = r.nextInt(89999) + 10000;
+		// 获取随机的五位数（10000-99999）
+		int rannum = r.nextInt(89999) + 10000;// r.nextInt(89999)：0<x<89999
 		String nowTimeStr = sDateFormat.format(new Date());
 		return nowTimeStr + rannum;
 	}

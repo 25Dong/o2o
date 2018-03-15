@@ -1,7 +1,7 @@
 package com.mark.o2o.util;
 
 public class PathUtil {
-	private static String seperator = System.getProperty("file.separator");
+	private static String seperator = System.getProperty("file.separator");//获取文件的分流符号
 
 	public static String getImgBasePath() {
 		String os = System.getProperty("os.name");
@@ -18,5 +18,11 @@ public class PathUtil {
 	public static String getShopImagePath(long shopId) {
 		String imagePath = "/upload/images/item/shop/" + shopId + "/";
 		return imagePath.replace("/", seperator);
+	}
+	
+	public static void main(String[] args){
+		String basePath = PathUtil.getImgBasePath();
+		System.out.println(basePath);//D:\projectdev\image
+
 	}
 }
