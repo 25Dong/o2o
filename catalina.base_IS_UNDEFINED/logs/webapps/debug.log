@@ -1,43 +1,57 @@
-2018-03-15 16:25:26.810 [main] DEBUG com.mark.o2o.dao.ProductDao.queryProductById - ==>  Preparing: SELECT p.product_id, p.product_name, p.product_desc, p.img_addr, p.normal_price, p.promotion_price, p.priority, p.create_time, p.last_edit_time, p.enable_status, p.product_category_id, p.shop_id, pm.product_img_id, pm.img_addr AS detail_img, pm.img_desc, pm.priority, pm.create_time FROM tb_product p LEFT JOIN tb_product_img pm ON p.product_id = pm.product_id WHERE p.product_id = ? ORDER BY pm.priority DESC 
-2018-03-15 16:25:26.847 [main] DEBUG com.mark.o2o.dao.ProductDao.queryProductById - ==> Parameters: 1(Long)
-2018-03-15 16:26:17.432 [main] DEBUG com.mark.o2o.dao.ProductDao.queryProductById - ==>  Preparing: SELECT p.product_id, p.product_name, p.product_desc, p.img_addr, p.normal_price, p.promotion_price, p.priority, p.create_time, p.last_edit_time, p.enable_status, p.product_category_id, p.shop_id, pm.product_img_id, pm.img_addr AS detail_img, pm.img_desc, pm.priority, pm.create_time FROM tb_product p LEFT JOIN tb_product_img pm ON p.product_id = pm.product_id WHERE p.product_id = ? ORDER BY pm.priority DESC 
-2018-03-15 16:26:17.465 [main] DEBUG com.mark.o2o.dao.ProductDao.queryProductById - ==> Parameters: 1(Long)
-2018-03-15 16:35:47.497 [main] DEBUG com.mark.o2o.dao.ProductDao.queryProductById - ==>  Preparing: SELECT p.product_id, p.product_name, p.product_desc, p.img_addr, p.normal_price, p.promotion_price, p.priority, p.create_time, p.last_edit_time, p.enable_status, p.product_category_id, p.shop_id, pm.product_img_id, pm.img_addr AS detail_img, pm.img_desc, pm.priority, pm.create_time FROM tb_product p LEFT JOIN tb_product_img pm ON p.product_id = pm.product_id WHERE p.product_id = ? ORDER BY pm.priority DESC 
-2018-03-15 16:35:47.525 [main] DEBUG com.mark.o2o.dao.ProductDao.queryProductById - ==> Parameters: 1(Long)
-2018-03-15 16:35:47.547 [main] DEBUG com.mark.o2o.dao.ProductDao.queryProductById - <==      Total: 2
-2018-03-15 16:36:58.769 [main] DEBUG com.mark.o2o.dao.ProductDao.queryProductById - ==>  Preparing: SELECT p.product_id, p.product_name, p.product_desc, p.img_addr, p.normal_price, p.promotion_price, p.priority, p.create_time, p.last_edit_time, p.enable_status, p.product_category_id, p.shop_id, pm.product_img_id, pm.img_addr AS detail_img, pm.img_desc, pm.priority, pm.create_time FROM tb_product p LEFT JOIN tb_product_img pm ON p.product_id = pm.product_id WHERE p.product_id = ? ORDER BY pm.priority DESC 
-2018-03-15 16:36:58.794 [main] DEBUG com.mark.o2o.dao.ProductDao.queryProductById - ==> Parameters: 1(Long)
-2018-03-15 16:36:58.821 [main] DEBUG com.mark.o2o.dao.ProductDao.queryProductById - <==      Total: 2
-2018-03-15 16:37:19.820 [main] DEBUG com.mark.o2o.dao.ProductDao.queryProductById - ==>  Preparing: SELECT p.product_id, p.product_name, p.product_desc, p.img_addr, p.normal_price, p.promotion_price, p.priority, p.create_time, p.last_edit_time, p.enable_status, p.product_category_id, p.shop_id, pm.product_img_id, pm.img_addr AS detail_img, pm.img_desc, pm.priority, pm.create_time FROM tb_product p LEFT JOIN tb_product_img pm ON p.product_id = pm.product_id WHERE p.product_id = ? ORDER BY pm.priority DESC 
-2018-03-15 16:37:19.847 [main] DEBUG com.mark.o2o.dao.ProductDao.queryProductById - ==> Parameters: 1(Long)
-2018-03-15 16:37:19.869 [main] DEBUG com.mark.o2o.dao.ProductDao.queryProductById - <==      Total: 2
-2018-03-15 16:59:59.173 [main] DEBUG com.mark.o2o.dao.ProductDao.updateProduct - ==>  Preparing: UPDATE tb_product SET product_name=?, product_category_id=? WHERE product_id = ? AND shop_id=? 
-2018-03-15 16:59:59.208 [main] DEBUG com.mark.o2o.dao.ProductDao.updateProduct - ==> Parameters: 第二个产品(String), 1(Long), 1(Long), 1(Long)
-2018-03-15 16:59:59.289 [main] DEBUG com.mark.o2o.dao.ProductDao.updateProduct - <==    Updates: 1
-2018-03-15 17:09:52.297 [main] DEBUG com.mark.o2o.dao.ProductImgDao.queryProductImgList - ==>  Preparing: SELECT product_img_id, img_addr, img_desc, priority, create_time, product_id FROM tb_product_img WHERE product_id=? ORDER BY product_img_id ASC 
-2018-03-15 17:09:52.324 [main] DEBUG com.mark.o2o.dao.ProductImgDao.queryProductImgList - ==> Parameters: 1(Long)
-2018-03-15 17:09:52.345 [main] DEBUG com.mark.o2o.dao.ProductImgDao.queryProductImgList - <==      Total: 2
-2018-03-15 17:11:58.901 [main] DEBUG c.m.o.d.ProductImgDao.deleteProductImgByProductId - ==>  Preparing: DELETE FROM tb_product_img WHERE product_id = ? 
-2018-03-15 17:11:58.928 [main] DEBUG c.m.o.d.ProductImgDao.deleteProductImgByProductId - ==> Parameters: 1(Long)
-2018-03-15 17:11:59.044 [main] DEBUG c.m.o.d.ProductImgDao.deleteProductImgByProductId - <==    Updates: 2
-2018-03-15 17:13:21.891 [main] DEBUG c.m.o.d.ProductImgDao.deleteProductImgByProductId - ==>  Preparing: DELETE FROM tb_product_img WHERE product_id = ? 
-2018-03-15 17:13:21.918 [main] DEBUG c.m.o.d.ProductImgDao.deleteProductImgByProductId - ==> Parameters: 1(Long)
-2018-03-15 17:13:21.923 [main] DEBUG c.m.o.d.ProductImgDao.deleteProductImgByProductId - <==    Updates: 0
-2018-03-15 18:20:48.922 [main] DEBUG com.mark.o2o.dao.ProductDao.queryProductList - ==>  Preparing: SELECT product_id, product_name, product_desc, img_addr, normal_price, promotion_price, priority, create_time, last_edit_time, enable_status, product_category_id, shop_id FROM tb_product WHERE shop_id = ? ORDER BY priority DESC LIMIT ?,?; 
-2018-03-15 18:20:48.957 [main] DEBUG com.mark.o2o.dao.ProductDao.queryProductList - ==> Parameters: 1(Long), 0(Integer), 3(Integer)
-2018-03-15 18:20:48.999 [main] DEBUG com.mark.o2o.dao.ProductDao.queryProductList - <==      Total: 3
-2018-03-15 18:20:49.019 [main] DEBUG com.mark.o2o.dao.ProductDao.queryProductCount - ==>  Preparing: SELECT count(1) FROM tb_product WHERE shop_id = ? 
-2018-03-15 18:20:49.019 [main] DEBUG com.mark.o2o.dao.ProductDao.queryProductCount - ==> Parameters: 1(Long)
-2018-03-15 18:20:49.021 [main] DEBUG com.mark.o2o.dao.ProductDao.queryProductCount - <==      Total: 1
-2018-03-15 18:20:49.023 [main] DEBUG com.mark.o2o.dao.ProductDao.queryProductList - ==>  Preparing: SELECT product_id, product_name, product_desc, img_addr, normal_price, promotion_price, priority, create_time, last_edit_time, enable_status, product_category_id, shop_id FROM tb_product WHERE shop_id = ? and product_name like '%测试%' ORDER BY priority DESC LIMIT ?,?; 
-2018-03-15 18:20:49.023 [main] DEBUG com.mark.o2o.dao.ProductDao.queryProductList - ==> Parameters: 1(Long), 0(Integer), 3(Integer)
-2018-03-15 18:20:49.063 [main] DEBUG com.mark.o2o.dao.ProductDao.queryProductList - <==      Total: 2
-2018-03-15 18:20:49.064 [main] DEBUG com.mark.o2o.dao.ProductDao.queryProductCount - ==>  Preparing: SELECT count(1) FROM tb_product WHERE shop_id = ? and product_name like '%测试%' 
-2018-03-15 18:20:49.064 [main] DEBUG com.mark.o2o.dao.ProductDao.queryProductCount - ==> Parameters: 1(Long)
-2018-03-15 18:20:49.066 [main] DEBUG com.mark.o2o.dao.ProductDao.queryProductCount - <==      Total: 1
-2018-03-15 22:38:41.348 [main] DEBUG c.m.o2o.dao.ProductDao.updateProductCategoryToNull - ==>  Preparing: UPDATE tb_product SET product_category_id = null WHERE product_category_id = ? 
-2018-03-15 22:38:41.386 [main] DEBUG c.m.o2o.dao.ProductDao.updateProductCategoryToNull - ==> Parameters: 2(Long)
-2018-03-15 22:38:41.411 [main] DEBUG c.m.o2o.dao.ProductDao.updateProductCategoryToNull - <==    Updates: 0
-2018-03-15 22:40:03.655 [main] DEBUG c.m.o2o.dao.ProductDao.updateProductCategoryToNull - ==>  Preparing: UPDATE tb_product SET product_category_id = null WHERE product_category_id = ? 
-2018-03-15 22:40:03.685 [main] DEBUG c.m.o2o.dao.ProductDao.updateProductCategoryToNull - ==> Parameters: 5(Long)
-2018-03-15 22:40:03.959 [main] DEBUG c.m.o2o.dao.ProductDao.updateProductCategoryToNull - <==    Updates: 1
+2018-03-16 10:56:58.241 [main] DEBUG com.mark.o2o.dao.HeadLineDao.queryHeadLine - ==>  Preparing: SELECT line_id,line_name,line_link,line_img,priority,enable_status,create_time,last_edit_time FROM tb_head_line ORDER BY priority DESC 
+2018-03-16 10:56:58.303 [main] DEBUG com.mark.o2o.dao.HeadLineDao.queryHeadLine - ==> Parameters: 
+2018-03-16 10:56:58.318 [main] DEBUG com.mark.o2o.dao.HeadLineDao.queryHeadLine - <==      Total: 2
+2018-03-16 11:00:35.715 [main] DEBUG com.mark.o2o.dao.ShopCategoryDao.queryShopCategory - ==>  Preparing: SELECT shop_category_id, shop_category_name, shop_category_des, shop_category_img, priority, create_time, last_edit_time, parent_id FROM tb_shop_category WHERE parent_id is null ORDER BY priority DESC 
+2018-03-16 11:00:35.740 [main] DEBUG com.mark.o2o.dao.ShopCategoryDao.queryShopCategory - ==> Parameters: 
+2018-03-16 11:00:35.759 [main] DEBUG com.mark.o2o.dao.ShopCategoryDao.queryShopCategory - <==      Total: 2
+2018-03-16 13:09:24.934 [main] DEBUG com.mark.o2o.dao.HeadLineDao.insertheadLine - ==>  Preparing: INSERT INTO tb_head_line(line_name,line_link,line_img,priority,enable_status,create_time,last_edit_time) VALUES (?,?,?,?,?,?,?) 
+2018-03-16 13:09:24.995 [main] DEBUG com.mark.o2o.dao.HeadLineDao.insertheadLine - ==> Parameters: testName(String), testLink(String), testImg(String), 1(Integer), 1(Integer), 2018-03-16 13:09:24.629(Timestamp), 2018-03-16 13:09:24.629(Timestamp)
+2018-03-16 13:09:25.053 [main] DEBUG com.mark.o2o.dao.HeadLineDao.insertheadLine - <==    Updates: 1
+2018-03-16 14:09:36.147 [main] DEBUG com.mark.o2o.dao.HeadLineDao.updateHeadLine - ==>  Preparing: update tb_head_line SET line_name=?, line_img=? where line_id=? 
+2018-03-16 14:09:36.172 [main] DEBUG com.mark.o2o.dao.HeadLineDao.updateHeadLine - ==> Parameters: gengxin(String), gengxinaddr(String), 1(Long)
+2018-03-16 14:09:36.266 [main] DEBUG com.mark.o2o.dao.HeadLineDao.updateHeadLine - <==    Updates: 1
+2018-03-16 14:26:35.989 [main] DEBUG com.mark.o2o.dao.HeadLineDao.insertheadLine - ==>  Preparing: INSERT INTO tb_head_line(line_name,line_link,line_img,priority,enable_status,create_time,last_edit_time) VALUES (?,?,?,?,?,?,?) 
+2018-03-16 14:26:36.017 [main] DEBUG com.mark.o2o.dao.HeadLineDao.insertheadLine - ==> Parameters: testNameSeriver(String), testLinkSeriver(String), testImgSeriver(String), 1(Integer), 1(Integer), 2018-03-16 14:26:35.972(Timestamp), 2018-03-16 14:26:35.972(Timestamp)
+2018-03-16 14:26:36.085 [main] DEBUG com.mark.o2o.dao.HeadLineDao.insertheadLine - <==    Updates: 1
+2018-03-16 14:26:36.093 [main] DEBUG com.mark.o2o.util.ImageUtil - current relativeAddr is :\upload\images\item\headline\2018031614263636512.jpg
+2018-03-16 14:26:36.093 [main] DEBUG com.mark.o2o.util.ImageUtil - current complete addr is :D:\projectdev\image\upload\images\item\headline\2018031614263636512.jpg
+2018-03-16 14:26:36.093 [main] DEBUG com.mark.o2o.util.ImageUtil - basePath is :/E:/workspace_MARK/o2o/target/test-classes/
+2018-03-16 14:26:46.092 [main] DEBUG com.mark.o2o.dao.HeadLineDao.updateHeadLine - ==>  Preparing: update tb_head_line SET line_name=?, line_link=?, line_img=?, priority=?, enable_status=?, last_edit_time=? where line_id=? 
+2018-03-16 14:26:46.093 [main] DEBUG com.mark.o2o.dao.HeadLineDao.updateHeadLine - ==> Parameters: testNameSeriver(String), testLinkSeriver(String), \upload\images\item\headline\2018031614263636512.jpg(String), 1(Integer), 1(Integer), 2018-03-16 14:26:35.972(Timestamp), 4(Long)
+2018-03-16 14:26:46.137 [main] DEBUG com.mark.o2o.dao.HeadLineDao.updateHeadLine - <==    Updates: 1
+2018-03-16 14:33:43.001 [main] DEBUG com.mark.o2o.dao.HeadLineDao.insertheadLine - ==>  Preparing: INSERT INTO tb_head_line(line_name,line_link,line_img,priority,enable_status,create_time,last_edit_time) VALUES (?,?,?,?,?,?,?) 
+2018-03-16 14:33:43.048 [main] DEBUG com.mark.o2o.dao.HeadLineDao.insertheadLine - ==> Parameters: testNameSeriver(String), testLinkSeriver(String), testImgSeriver(String), 1(Integer), 1(Integer), 2018-03-16 14:33:42.984(Timestamp), 2018-03-16 14:33:42.984(Timestamp)
+2018-03-16 14:33:43.066 [main] DEBUG com.mark.o2o.dao.HeadLineDao.insertheadLine - <==    Updates: 1
+2018-03-16 14:33:43.074 [main] DEBUG com.mark.o2o.util.ImageUtil - current relativeAddr is :\upload\images\item\headline\2018031614334323423.jpg
+2018-03-16 14:33:43.075 [main] DEBUG com.mark.o2o.util.ImageUtil - current complete addr is :D:\projectdev\image\upload\images\item\headline\2018031614334323423.jpg
+2018-03-16 14:33:43.075 [main] DEBUG com.mark.o2o.util.ImageUtil - basePath is :/E:/workspace_MARK/o2o/target/test-classes/
+2018-03-16 14:33:43.248 [main] DEBUG com.mark.o2o.dao.HeadLineDao.updateHeadLine - ==>  Preparing: update tb_head_line SET line_name=?, line_link=?, line_img=?, priority=?, enable_status=?, last_edit_time=? where line_id=? 
+2018-03-16 14:33:43.249 [main] DEBUG com.mark.o2o.dao.HeadLineDao.updateHeadLine - ==> Parameters: testNameSeriver(String), testLinkSeriver(String), \upload\images\item\headline\2018031614334323423.jpg(String), 1(Integer), 1(Integer), 2018-03-16 14:33:42.984(Timestamp), 5(Long)
+2018-03-16 14:33:43.250 [main] DEBUG com.mark.o2o.dao.HeadLineDao.updateHeadLine - <==    Updates: 1
+2018-03-16 14:33:43.459 [main] DEBUG com.mark.o2o.dao.HeadLineDao.insertheadLine - ==>  Preparing: INSERT INTO tb_head_line(line_name,line_link,line_img,priority,enable_status,create_time,last_edit_time) VALUES (?,?,?,?,?,?,?) 
+2018-03-16 14:33:43.462 [main] DEBUG com.mark.o2o.dao.HeadLineDao.insertheadLine - ==> Parameters: testNameSeriver(String), testLinkSeriver(String), testImgSeriver(String), 1(Integer), 1(Integer), 2018-03-16 14:33:43.459(Timestamp), 2018-03-16 14:33:43.459(Timestamp)
+2018-03-16 14:33:43.467 [main] DEBUG com.mark.o2o.dao.HeadLineDao.insertheadLine - <==    Updates: 1
+2018-03-16 14:33:43.468 [main] DEBUG com.mark.o2o.util.ImageUtil - current relativeAddr is :\upload\images\item\headline\2018031614334328264.jpg
+2018-03-16 14:33:43.469 [main] DEBUG com.mark.o2o.util.ImageUtil - current complete addr is :D:\projectdev\image\upload\images\item\headline\2018031614334328264.jpg
+2018-03-16 14:33:43.469 [main] DEBUG com.mark.o2o.util.ImageUtil - basePath is :/E:/workspace_MARK/o2o/target/test-classes/
+2018-03-16 14:33:43.621 [main] DEBUG com.mark.o2o.dao.HeadLineDao.updateHeadLine - ==>  Preparing: update tb_head_line SET line_name=?, line_link=?, line_img=?, priority=?, enable_status=?, last_edit_time=? where line_id=? 
+2018-03-16 14:33:43.622 [main] DEBUG com.mark.o2o.dao.HeadLineDao.updateHeadLine - ==> Parameters: testNameSeriver(String), testLinkSeriver(String), \upload\images\item\headline\2018031614334328264.jpg(String), 1(Integer), 1(Integer), 2018-03-16 14:33:43.459(Timestamp), 6(Long)
+2018-03-16 14:33:43.624 [main] DEBUG com.mark.o2o.dao.HeadLineDao.updateHeadLine - <==    Updates: 1
+2018-03-16 14:33:43.733 [main] DEBUG com.mark.o2o.dao.HeadLineDao.insertheadLine - ==>  Preparing: INSERT INTO tb_head_line(line_name,line_link,line_img,priority,enable_status,create_time,last_edit_time) VALUES (?,?,?,?,?,?,?) 
+2018-03-16 14:33:43.737 [main] DEBUG com.mark.o2o.dao.HeadLineDao.insertheadLine - ==> Parameters: testNameSeriver(String), testLinkSeriver(String), testImgSeriver(String), 1(Integer), 1(Integer), 2018-03-16 14:33:43.733(Timestamp), 2018-03-16 14:33:43.733(Timestamp)
+2018-03-16 14:33:43.741 [main] DEBUG com.mark.o2o.dao.HeadLineDao.insertheadLine - <==    Updates: 1
+2018-03-16 14:33:43.742 [main] DEBUG com.mark.o2o.util.ImageUtil - current relativeAddr is :\upload\images\item\headline\2018031614334373607.jpg
+2018-03-16 14:33:43.743 [main] DEBUG com.mark.o2o.util.ImageUtil - current complete addr is :D:\projectdev\image\upload\images\item\headline\2018031614334373607.jpg
+2018-03-16 14:33:43.743 [main] DEBUG com.mark.o2o.util.ImageUtil - basePath is :/E:/workspace_MARK/o2o/target/test-classes/
+2018-03-16 14:33:43.776 [main] DEBUG com.mark.o2o.dao.HeadLineDao.updateHeadLine - ==>  Preparing: update tb_head_line SET line_name=?, line_link=?, line_img=?, priority=?, enable_status=?, last_edit_time=? where line_id=? 
+2018-03-16 14:33:43.778 [main] DEBUG com.mark.o2o.dao.HeadLineDao.updateHeadLine - ==> Parameters: testNameSeriver(String), testLinkSeriver(String), \upload\images\item\headline\2018031614334373607.jpg(String), 1(Integer), 1(Integer), 2018-03-16 14:33:43.733(Timestamp), 7(Long)
+2018-03-16 14:33:43.779 [main] DEBUG com.mark.o2o.dao.HeadLineDao.updateHeadLine - <==    Updates: 1
+2018-03-16 14:33:43.892 [main] DEBUG com.mark.o2o.dao.HeadLineDao.insertheadLine - ==>  Preparing: INSERT INTO tb_head_line(line_name,line_link,line_img,priority,enable_status,create_time,last_edit_time) VALUES (?,?,?,?,?,?,?) 
+2018-03-16 14:33:43.894 [main] DEBUG com.mark.o2o.dao.HeadLineDao.insertheadLine - ==> Parameters: testNameSeriver(String), testLinkSeriver(String), testImgSeriver(String), 1(Integer), 1(Integer), 2018-03-16 14:33:43.892(Timestamp), 2018-03-16 14:33:43.892(Timestamp)
+2018-03-16 14:33:43.898 [main] DEBUG com.mark.o2o.dao.HeadLineDao.insertheadLine - <==    Updates: 1
+2018-03-16 14:33:43.900 [main] DEBUG com.mark.o2o.util.ImageUtil - current relativeAddr is :\upload\images\item\headline\2018031614334322240.jpg
+2018-03-16 14:33:43.900 [main] DEBUG com.mark.o2o.util.ImageUtil - current complete addr is :D:\projectdev\image\upload\images\item\headline\2018031614334322240.jpg
+2018-03-16 14:33:43.900 [main] DEBUG com.mark.o2o.util.ImageUtil - basePath is :/E:/workspace_MARK/o2o/target/test-classes/
+2018-03-16 14:33:43.937 [main] DEBUG com.mark.o2o.dao.HeadLineDao.updateHeadLine - ==>  Preparing: update tb_head_line SET line_name=?, line_link=?, line_img=?, priority=?, enable_status=?, last_edit_time=? where line_id=? 
+2018-03-16 14:33:43.938 [main] DEBUG com.mark.o2o.dao.HeadLineDao.updateHeadLine - ==> Parameters: testNameSeriver(String), testLinkSeriver(String), \upload\images\item\headline\2018031614334322240.jpg(String), 1(Integer), 1(Integer), 2018-03-16 14:33:43.892(Timestamp), 8(Long)
+2018-03-16 14:33:43.947 [main] DEBUG com.mark.o2o.dao.HeadLineDao.updateHeadLine - <==    Updates: 1

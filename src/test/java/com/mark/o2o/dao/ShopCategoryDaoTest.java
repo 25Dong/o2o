@@ -14,12 +14,9 @@ public class ShopCategoryDaoTest extends BaseTest{
 	//测试查询语句
 	@Test
 	public void testQueryShopCategory(){
-		ShopCategory baseShopCategory = new ShopCategory();
-		ShopCategory sonShopCategory = new ShopCategory();
-		baseShopCategory.setShopCategoryId(2L);
-		sonShopCategory.setParent(baseShopCategory);
+	
 		
-		List<ShopCategory> shopCategories=shopCategoryDao.queryShopCategory(sonShopCategory);
+		List<ShopCategory> shopCategories=shopCategoryDao.queryShopCategory(null);
 		for(ShopCategory shopCategory:shopCategories){
 			System.out.println(shopCategory.getShopCategoryName());
 		}

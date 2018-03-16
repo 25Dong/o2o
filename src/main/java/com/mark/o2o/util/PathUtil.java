@@ -19,7 +19,12 @@ public class PathUtil {
 		String imagePath = "/upload/images/item/shop/" + shopId + "/";
 		return imagePath.replace("/", seperator);
 	}
-	
+
+	//头条图片路径	
+	public static String getHeadLineImagePath(){
+		String imagePath = "/upload/images/item/headline/";
+		return imagePath.replace("/", seperator);
+	}
 	public static void main(String[] args){
 		String basePath = PathUtil.getImgBasePath();
 		System.out.println(basePath);//D:\projectdev\image
