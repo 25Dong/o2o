@@ -8,7 +8,7 @@ public class ShopCategory {
 	// 类别名
 	private String shopCategoryName;
 	// 类别描述
-	private String shopCategoryDesc;
+	private String shopCategoryDes;
 	// 类别图片地址(针对一级类别)
 	private String shopCategoryImg;
 	// 权重，越大越排前显示
@@ -37,11 +37,11 @@ public class ShopCategory {
 	}
 
 	public String getShopCategoryDesc() {
-		return shopCategoryDesc;
+		return shopCategoryDes;
 	}
 
 	public void setShopCategoryDesc(String shopCategoryDesc) {
-		this.shopCategoryDesc = shopCategoryDesc;
+		this.shopCategoryDes = shopCategoryDesc;
 	}
 
 	public String getShopCategoryImg() {
