@@ -28,11 +28,11 @@ public class MainPageController {
 	@ResponseBody
 	private Map<String, Object> listMainPageInfo(){
 		Map<String, Object> modelMap = new HashMap<String, Object>();
-		List<ShopCategory> shopCategorieList = new ArrayList<ShopCategory>();
+		List<ShopCategory> shopCategoryList = new ArrayList<ShopCategory>();
 		try{
 			//获取一级店铺列表（parentId为空的ShopCategory）
-			shopCategorieList = shopCategoryDao.queryShopCategory(null);
-			modelMap.put("shopCategorieList", shopCategorieList);
+			shopCategoryList = shopCategoryDao.queryShopCategory(null);
+			modelMap.put("shopCategoryList", shopCategoryList);
 		}catch(Exception e){
 			modelMap.put("success", false);
 			modelMap.put("errMsg", e.getMessage());
@@ -50,7 +50,7 @@ public class MainPageController {
 			modelMap.put("errMsg", e.getMessage());
 			return modelMap;
 		}
-		modelMap.put("success", false);
+		modelMap.put("success", true);
 		return modelMap;
 
 	}
