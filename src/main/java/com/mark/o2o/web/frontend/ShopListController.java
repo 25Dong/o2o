@@ -33,13 +33,13 @@ public class ShopListController {
 	private ShopCategoryService shopCategoryService;
 
 	//1.返回商品列表里的ShopCategory列表(二级列表或者一级列表)，以及区域列表信息
-	@RequestMapping(value="/listshoppageinfo",method=RequestMethod.GET)
+	@RequestMapping(value="/listshopspageinfo",method=RequestMethod.GET)
 	@ResponseBody
 	private Map<String, Object> listShopPageInfo(HttpServletRequest request){
 		Map<String, Object> modelMap = new HashMap<String, Object>();
 		// 从前端请求中获取parentId
 		long parentId = HttpServletRequestUtil.getLong(request, "parentId");
-		List<ShopCategory> shopCategorieList = new ArrayList<ShopCategory>();
+		List<ShopCategory> shopCategoryList = new ArrayList<ShopCategory>();
 		List<Area> areaList = new ArrayList<Area>();
 
 		if(parentId != -1 ){//parentId存在，则取出该一级ShopCategory下的二级ShopCategory列表
@@ -48,7 +48,7 @@ public class ShopListController {
 				ShopCategory parent = new ShopCategory();
 				parent.setShopCategoryId(parentId);
 				shopCategoryCondition.setParent(parent);
-				shopCategorieList = shopCategoryService.getShopCategoryList(shopCategoryCondition);
+				shopCategoryList = shopCategoryService.getShopCategoryList(shopCategoryCondition);
 			} catch (Exception e) {
 				modelMap.put("success", false);
 				modelMap.put("errMag", e.getMessage());
@@ -56,14 +56,14 @@ public class ShopListController {
 			}
 		}else{//parentId不存在:取出一级商品种类(用户在首页选择的是全部商店列表)
 			try {
-				shopCategorieList = shopCategoryService.getShopCategoryList(null);
+				shopCategoryList = shopCategoryService.getShopCategoryList(null);
 			} catch (Exception e) {
 				modelMap.put("success", false);
 				modelMap.put("errMag", e.getMessage());
 				return modelMap;
 			}
 		}
-		modelMap.put("shopCategorieList", shopCategorieList);
+		modelMap.put("shopCategoryList", shopCategoryList);
 		try {
 			areaList = areaService.getAreaList();
 		} catch (Exception e) {
@@ -86,7 +86,7 @@ public class ShopListController {
 		if((pageIndex >-1)&&(pageSize> -1)){
 			//// 从前端请求中获取相关的查询条件信息
 			long parentId = HttpServletRequestUtil.getLong(request, "parentId");// 试着获取一级类别Id
-			long shopCategoryId = HttpServletRequestUtil.getLong(request, "shopCategoryID");// 试着获取特定二级类别Id
+			long shopCategoryId = HttpServletRequestUtil.getLong(request, "shopCategoryId");// 试着获取特定二级类别Id
 			int areaId = HttpServletRequestUtil.getInt(request, "areaId");// 试着获取区域Id
 			String shopName = HttpServletRequestUtil.getString(request, "shopName");
 

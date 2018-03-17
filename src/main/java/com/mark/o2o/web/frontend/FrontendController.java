@@ -13,4 +13,10 @@ public class FrontendController {
 	private String index() {
 		return "frontend/index";
 	}
+	
+	//2.商店列表页
+	@RequestMapping(value = "/shoplist", method = RequestMethod.GET)
+	private String showShopList(){
+		return "frontend/shoplist";
+	}
 }
