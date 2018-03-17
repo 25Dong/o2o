@@ -166,6 +166,12 @@ $(function(){
 		pageIndex = 1;//重置页码
 		addItems(pageSize, pageIndex);//加载组合地区搜素得到的店铺
 	});
+	
+	//事件5:点击店铺的卡片进入该店铺的详情页
+	$(".shop-list").on('click','.card',function(e){
+		var shopId = e.currentTarget.dataset.shopId;
+		window.location.href = '/o2o/frontend/shopdetail?shopId=' + shopId;
+	});
 	// 点击后打开右侧栏
 	$('#me').click(function() {
 		$.openPanel('#panel-right-demo');
