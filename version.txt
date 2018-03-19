@@ -9,3 +9,5 @@
 3.16.2(头条的查询,首页后台和前端的开发)
 (Tomcat解析路径的配置)：  <Context docBase="D:/projectdev/image/upload" path="/upload"></Context>
 3.16.3(商店列表，组合查询的后端开发)
+3.17.1(商店列表，组合查询的前端开发)
+3.19.1(商店详情，组合查询商品 后端开发 部分前端)
