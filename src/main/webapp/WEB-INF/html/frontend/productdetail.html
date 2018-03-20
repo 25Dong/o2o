@@ -16,7 +16,6 @@
 	href="../resources/css/frontend/productdetail.css">
 </head>
 <body>
-	<!--1.  -->
 	<div class="page-group">
 		<div class="page">
 			<!--1.1标题  -->
@@ -37,7 +36,7 @@
 				</a>
 			</nav>
 
-			<!--1.3  -->
+			<!--1.3无限滚动  -->
 			<div class="content infinite-scroll infinite-scroll-bottom"
 				data-distance="100">
 				<!-- 这里是页面内容区 -->
@@ -50,8 +49,8 @@
 						<div class="card-content">
 							<div class="card-content-inner">
 								<p class="color-gray">
-									<span id="product-time">2015/01/15</span>
-									<span class="pull-right" id="product-point"></span>
+									<span id="product-time"></span> <span class="pull-right"
+										id="product-point"></span>
 								</p>
 								<p id="price" hidden="true">
 									<span class="color-gray" id="normalPrice"> </span> <span><font
@@ -60,40 +59,37 @@
 								<p id="product-desc"></p>
 							</div>
 						</div>
-						<div class="card-img" id="imgList">
-							<!-- <a href="#" class="link">赞</a> -->
-							<!-- <a href="#" class="link">更多</a> -->
-						</div>
+						<div class="card-img" id="imgList"></div>
 					</div>
 				</div>
 			</div>
+		</div>
 
-			<!--  -->
-			<div class="panel-overlay"></div>
+		<!--2加载提示符  -->
+		<div class="panel-overlay"></div>
 
-			<!--  -->
-			<div class="panel panel-right panel-reveal" id="panel-right-demo">
-				<div class="content-block">
-					<p>
-						<a href="/o2o/local/accountbind?usertype=1" class="close-panel">绑定帐号</a>
-					</p>
-					<p>
-						<a href="/o2o/local/changepsw?usertype=1" class="close-panel">修改密码</a>
-					</p>
-					<p>
-						<a href="/o2o/frontend/myrecord" class="close-panel">消费记录</a>
-					</p>
-					<p>
-						<a href="/o2o/frontend/mypoint" class="close-panel">我的积分</a>
-					</p>
-					<p>
-						<a href="/o2o/frontend/pointrecord" class="close-panel">兑换记录</a>
-					</p>
-					<p>
-						<a href="#" usertype="1" class="close-panel" id="log-out">登出系统</a>
-					</p>
-					<!-- Click on link with "close-panel" class will close panel -->
-				</div>
+		<!--3工具栏内容  -->
+		<div class="panel panel-right panel-reveal" id="panel-right-demo">
+			<div class="content-block">
+				<p>
+					<a href="/o2o/local/accountbind?usertype=1" class="close-panel">绑定帐号</a>
+				</p>
+				<p>
+					<a href="/o2o/local/changepsw?usertype=1" class="close-panel">修改密码</a>
+				</p>
+				<p>
+					<a href="/o2o/frontend/myrecord" class="close-panel">消费记录</a>
+				</p>
+				<p>
+					<a href="/o2o/frontend/mypoint" class="close-panel">我的积分</a>
+				</p>
+				<p>
+					<a href="/o2o/frontend/pointrecord" class="close-panel">兑换记录</a>
+				</p>
+				<p>
+					<a href="#" usertype="1" class="close-panel" id="log-out">登出系统</a>
+				</p>
+				<!-- Click on link with "close-panel" class will close panel -->
 			</div>
 		</div>
 	</div>

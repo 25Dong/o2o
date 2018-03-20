@@ -25,8 +25,8 @@ public class Product {
 		// 0.下架 1.在前端展示系统展示
 		private Integer enableStatus;
 
-		// 图片详情图列表，跟商品是多对一的关系
-		private List<ProductImg> productImgList;
+		// 图片详情图列表，跟商品1:n的关系
+		private List<ProductImg> productImgList;//数据库中左连接查询
 		// 商品类别，一件商品仅属于一个商品类别
 		private ProductCategory productCategory;
 		// 店铺实体类，标明商品属于哪个店铺
