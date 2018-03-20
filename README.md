@@ -5,4 +5,4 @@
 ### 商店详情逻辑图 
 ![Image text](https://github.com/25Dong/o2o/blob/master/userGuide/shopdetail.png)
 ### 商品详情逻辑图
-![Image text](https://github.com/25Dong/o2o/blob/master/userGuide/productdetail.png)
+![Image text](https://github.com/25Dong/o2o/blob/master/userGuide/productList.png)
