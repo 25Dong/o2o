@@ -28,7 +28,7 @@ $(function(){
 			$('#imgList').html(imgListHtml);
 		}else{
 			console.error("渲染商品详情异常:"+data.errMsg);  
-			$.toast("加载失败！");
+			$.toast("加载失败");
 		}
 	});
 	
