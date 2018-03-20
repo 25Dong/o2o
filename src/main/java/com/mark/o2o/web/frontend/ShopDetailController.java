@@ -34,7 +34,6 @@ public class ShopDetailController {
 	private ProductService productService;
 	@Autowired
 	private ProductCategoryService productCategoryService;
-
 	// 获取本店铺信息以及商品类别信息列表的URL
 	@RequestMapping(value = "/listshopdetailpageinfo", method = RequestMethod.GET)
 	@ResponseBody

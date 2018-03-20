@@ -1,4 +1,5 @@
 $(function(){
+	
 	var loading = false;
 	var showAllInfo = false;
 	var parentId = getQueryString('parentId');
@@ -61,7 +62,7 @@ $(function(){
 				maxItems = data.count;//店铺总数
 				var html = '';
 				var shopList = data.shopList;
-				if(shopList == 0){
+				if(shopList.length = 0){
 					$("#shopIsNull").show();
 					$('.infinite-scroll-preloader').hide();// 隐藏提示符
 					return;
